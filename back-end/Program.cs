@@ -1,11 +1,34 @@
+using Microsoft.EntityFrameworkCore;
+using Bagdex.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Allow CORS
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 // Add services to the container.
+
+builder.Services.AddCors( options =>
+{   
+    options.AddPolicy(MyAllowSpecificOrigins, builder => {
+        builder.WithOrigins("http://localhost").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+        builder.SetIsOriginAllowed(origin => true);
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add DbContext
+builder.Services.AddDbContext<BagdexContext> ( options => 
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("StringConexaoSQLServer"));
+    }
+);
 
 var app = builder.Build();
 
@@ -16,7 +39,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+//Allow CORS
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 

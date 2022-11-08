@@ -1,0 +1,286 @@
+    .board 
+    {
+        position: absolute;
+        top: 410px;
+        left: 4px;
+
+        width: 400px;
+        height: 180px;
+        background-color: transparent;
+    }
+    
+    .button_group
+    {
+        position: absolute;
+		top: 40px;
+		left: 70px;
+
+        width: 100px;
+        height: 100px;
+    }
+
+    div#button_right
+	{
+		position: absolute;
+		top: 35px;
+		left: 68px;
+
+		width: 30px;
+		height: 30px;
+		margin-right: 10px;
+		float: left;
+
+		border-radius: 20px;
+		
+		background-color: #00ff00;
+    box-shadow: -1px 2px #004700;
+	}
+
+	div#button_left
+	{
+		position: absolute;
+		top: 35px;
+		left: 0px;
+
+    width: 30px;
+		height: 30px;
+		margin-right: 10px;
+		float: left;
+
+		border-radius: 20px;
+		
+		background-color: #ff0000;
+    box-shadow: -1px 2px #530000;
+	}
+
+  div#button_top
+	{
+		position: absolute;
+		top: 0px;
+		left: 34px;
+
+        width: 30px;
+		height: 30px;
+		margin-right: 10px;
+
+		border-radius: 30px;
+		
+		background-color: #0400ff;
+    box-shadow: -1px 2px #01004d;
+	}
+
+  div#button_bottom
+    {
+        position: absolute;
+        top: 68px;
+        left: 34px;
+
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+
+        border-radius: 30px;
+        
+        background-color: #fffb00;
+    box-shadow: -1px 2px #525000;
+    }
+
+    div#cross
+	{
+		width: 100px;
+		height: 100px;
+
+		position: absolute;
+		top: 40px;
+		left: 220px;
+	}
+
+	div#topcross
+	{
+		width: 35px;
+		height: 36px;
+		background-color: #222;
+
+		position: absolute;
+		top: -7;
+		left: 32px;
+
+		box-shadow: -3px 2px #010101;
+		-webkit-box-shadow: -3px 2px #010101;
+		-moz-box-shadow: -3px 2px #010101;
+		-o-box-shadow: -3px 2px #010101;
+
+		border-top-left-radius: 5px;
+		-webkit-border-top-left-radius: 5px;
+		-moz-border-top-left-radius: 5px;
+		-o-border-top-left-radius: 5px;
+
+		border-top-right-radius: 5px;
+		-webkit-border-top-right-radius: 5px;
+		-moz-border-top-right-radius: 5px;
+		-o-border-top-right-radius: 5px;
+	}
+
+	div#leftcross
+	{
+		width: 35px;
+		height: 35px;
+		background-color: #222;
+		z-index: 1;
+
+		position: absolute;
+		left: 0;
+		top: 30px;
+
+		box-shadow: -3px 2px #010101;
+		-webkit-box-shadow: -3px 2px #010101;
+		-moz-box-shadow: -3px 2px #010101;
+		-o-box-shadow: -3px 2px #010101;
+
+		border-top-left-radius: 5px;
+		-webkit-border-top-left-radius: 5px;
+		-moz-border-top-left-radius: 5px;
+		-o-border-top-left-radius: 5px;
+
+		border-bottom-left-radius: 5px;
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-bottom-left-radius: 5px;
+		-o-border-bottom-left-radius: 5px;
+	}
+
+	div#midcross
+	{
+		width: 35px;
+		height: 35px;
+		background-color: #222;
+
+		position: absolute;
+		top: 30px;
+		left: 30px;
+
+		box-shadow: -3px 2px #010101;
+		-webkit-box-shadow: -3px 2px #010101;
+		-moz-box-shadow: -3px 2px #010101;
+		-o-box-shadow: -3px 2px #010101;
+	}
+
+	div#rightcross
+	{
+		width: 35px;
+		height: 35px;
+		background-color: #222;
+
+		position: absolute;
+		top: 30px;
+		right: 0;
+
+		box-shadow: -3px 2px #010101;
+		-webkit-box-shadow: -3px 2px #010101;
+		-moz-box-shadow: -3px 2px #010101;
+		-o-box-shadow: -3px 2px #010101;
+
+		border-top-right-radius: 5px;
+		-webkit-border-top-right-radius: 5px;
+		-moz-border-top-right-radius: 5px;
+		-o-border-top-right-radius: 5px;
+
+		border-bottom-right-radius: 5px;
+		-webkit-border-bottom-right-radius: 5px;
+		-moz-border-bottom-right-radius: 5px;
+		-o-border-bottom-right-radius: 5px;
+	}
+
+	div#botcross
+	{
+		width: 35px;
+		height: 35px;
+		background-color: #222;
+
+		position: absolute;
+		bottom: 0;
+		left: 32px;
+
+		box-shadow: -3px 2px #010101;
+		-webkit-box-shadow: -3px 2px #010101;
+		-moz-box-shadow: -3px 2px #010101;
+		-o-box-shadow: -3px 2px #010101;
+
+		border-bottom-left-radius: 5px;
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-bottom-left-radius: 5px;
+		-o-border-bottom-left-radius: 5px;
+
+		border-bottom-right-radius: 5px;
+		-webkit-border-bottom-right-radius: 5px;
+		-moz-border-bottom-right-radius: 5px;
+		-o-border-bottom-right-radius: 5px;
+	}
+
+	div#upT
+	{
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid rgb(17, 17, 17);
+
+		position: absolute;
+		top: 10px;
+		left: 7px;
+	}
+
+	div#downT
+	{
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #111;
+
+		position: absolute;
+		bottom: 12px;
+		left: 7px;
+	}
+
+	div#leftT
+	{
+		width: 0;
+		height: 0;
+		border-top: 10px solid transparent;
+		border-right: 10px solid #111;
+		border-bottom: 10px solid transparent;
+
+		position: absolute;
+		top: 8px;
+		left: 8px;
+	}
+
+	div#rightT
+	{
+		width: 0;
+		height: 0;
+		border-top: 10px solid transparent;
+		border-left: 10px solid #111;
+		border-bottom: 10px solid transparent;
+
+		position: absolute;
+		top: 8px;
+		right: 12px;
+	}
+
+	div#midCircle
+	{
+		width: 20px;
+		height: 20px;
+
+		position: absolute;
+		top: 8px;
+		left: 8px;
+
+		border-radius: 30px;
+		-webkit-border-radius: 30px;
+		-moz-border-radius: 30px;
+		-o-border-radius: 30px;
+
+		background: radial-gradient(#111, #222);
+	}

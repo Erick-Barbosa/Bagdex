@@ -1,0 +1,24 @@
+.info
+{
+    height: 130px;
+    width: 380px;
+    padding: 10px;
+    background-color: white;
+    z-index: 1;
+    font-size: 13px;
+    font-family: arial, sans-serif;
+
+    position: absolute;
+    top: 400px;
+    left: 8px;
+
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+
+    box-shadow: 0 0 20px #4ba8ff inset;
+    -webkit-box-shadow: 0 0 20px #4ba8ff inset;
+    -moz-box-shadow: 0 0 20px #4ba8ff inset;
+    -o-box-shadow: 0 0 20px #4ba8ff inset;
+}

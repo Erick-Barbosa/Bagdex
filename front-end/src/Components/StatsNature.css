@@ -1,0 +1,32 @@
+    div#stats_nature
+    {
+	position: absolute;
+	left: 210px;
+	top: 90px;
+	padding: 10px;
+
+	border-radius: 12px;
+	width: 180px;
+	height: 105px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 0 20px #4ba8ff inset;
+		-webkit-box-shadow: 0 0 20px #4ba8ff inset;
+		-moz-box-shadow: 0 0 20px #4ba8ff inset;
+		-o-box-shadow: 0 0 20px #4ba8ff inset;
+    }
+
+    table#stats_values
+    {
+        position: absolute;
+        padding-left: 210px;
+        top: 220px;
+        font-size: 15px;
+
+        width: 405px;
+        height: 100px;
+    }
+    
+    td.right_stats
+    {
+        text-align: right;
+    }

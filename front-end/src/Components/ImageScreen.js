@@ -1,13 +1,18 @@
 import './ImageScreen.css';
-import logo from './001.jpg'
 
 export default function ImageScreen(props) {
-    let imageUrl = `https://docs.google.com/uc?id=${props.id}`
+  
+    let imageUrl = (props.image) ?
+    `https://docs.google.com/uc?id=${props.image}` :
+    "https://cdn-icons-png.flaticon.com/512/63/63985.png"
+    
+    let imageNumber = (props.id > 0) ? "#"+props.id : ""
+    
     return (
     <div id="screen">
         <div id="picture">
-          <img src={logo} alt="Bágmon" height="200"/>
-          <div className="bottom-right"><strong>#33</strong></div>
+          <img src={imageUrl} alt="Bágmon" height="200"/>
+          <div className="bottom-right"><strong>{imageNumber}</strong></div>
         </div>
       </div>
     )

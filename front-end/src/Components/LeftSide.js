@@ -1,9 +1,20 @@
+import { Component } from 'react';
 import ButtonBoard from './ButtonBoard';
 import ImageScreen from './ImageScreen';
 
-export default function LeftSide() {
+export default class LeftSide extends Component {
+    
+    handleNextBagmon() {
+        console.log(this)
+    }
+    
+    executeLog() {
+        console.log(this.props)
+    }
+
+    render() {
     return (
-        <div id="left">
+        <div id="left" onClick={this.handleNextBagmon}>
             <div id="logo"></div>
             <div id="bg_curve1_left"></div>
             <div id="bg_curve2_left"></div>
@@ -15,8 +26,9 @@ export default function LeftSide() {
             </div>
             <div id="curve2_left">
             </div>
-            <ImageScreen id="1eaeR8HtaDEPqR5hO1VByF3W-kkueoOvS"></ImageScreen>
-            <ButtonBoard/>
+            <ImageScreen  ></ImageScreen>
+            <ButtonBoard {...this.props}
+            />
         </div>
-    )
+    )}
 }

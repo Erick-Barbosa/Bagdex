@@ -14,6 +14,7 @@ namespace Bagdex.Controllers
         {
             _context = context;
         }
+
         [HttpGet]
         public ActionResult<List<Bagmon>>? GetAll() {
             if (_context?.Bagmon != null)
@@ -23,9 +24,9 @@ namespace Bagdex.Controllers
         }
 
         [HttpGet("{BagmonId}")]
-        public ActionResult<List<Bagmon>> get(int BagmonId) {
+        public ActionResult<List<Bagmon>> get(int bagmonId) {
             try {
-                var result = _context.Bagmon.Find(BagmonId);
+                var result = _context.Bagmon.Find(bagmonId);
                 if (result == null)
                 {
                     return NotFound();

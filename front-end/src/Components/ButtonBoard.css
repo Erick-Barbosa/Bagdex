@@ -25,15 +25,16 @@
 		top: 35px;
 		left: 68px;
 
-		width: 30px;
-		height: 30px;
-		margin-right: 10px;
+		width: 20px;
+		height: 25px;
 		float: left;
+		padding-left: 10px;
+		padding-top: 5px;
 
 		border-radius: 20px;
 		
 		background-color: #00ff00;
-    box-shadow: -1px 2px #004700;
+    	box-shadow: -1px 2px #004700;
 	}
 
 	div#button_left
@@ -42,15 +43,16 @@
 		top: 35px;
 		left: 0px;
 
-    width: 30px;
-		height: 30px;
-		margin-right: 10px;
+    	width: 20px;
+		height: 25px;
 		float: left;
+		padding-left: 10px;
+		padding-top: 5px;
 
 		border-radius: 20px;
 		
 		background-color: #ff0000;
-    box-shadow: -1px 2px #530000;
+		box-shadow: -1px 2px #530000;
 	}
 
   div#button_top
@@ -59,14 +61,16 @@
 		top: 0px;
 		left: 34px;
 
-        width: 30px;
-		height: 30px;
-		margin-right: 10px;
+        width: 20px;
+		height: 25px;
+		float: left;
+		padding-left: 10px;
+		padding-top: 5px;
 
 		border-radius: 30px;
 		
 		background-color: #0400ff;
-    box-shadow: -1px 2px #01004d;
+    	box-shadow: -1px 2px #01004d;
 	}
 
   div#button_bottom
@@ -75,14 +79,16 @@
         top: 68px;
         left: 34px;
 
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
+        width: 20px;
+		height: 25px;
+		float: left;
+		padding-left: 10px;
+		padding-top: 5px;
 
         border-radius: 30px;
         
         background-color: #fffb00;
-    box-shadow: -1px 2px #525000;
+    	box-shadow: -1px 2px #525000;
     }
 
     div#cross
@@ -95,14 +101,14 @@
 		left: 220px;
 	}
 
-	div#topcross
+	div.topcross
 	{
 		width: 35px;
 		height: 36px;
 		background-color: #222;
 
 		position: absolute;
-		top: -7;
+		top: 0;
 		left: 32px;
 
 		box-shadow: -3px 2px #010101;
@@ -121,7 +127,7 @@
 		-o-border-top-right-radius: 5px;
 	}
 
-	div#leftcross
+	div.leftcross
 	{
 		width: 35px;
 		height: 35px;
@@ -130,7 +136,7 @@
 
 		position: absolute;
 		left: 0;
-		top: 30px;
+		top: 32px;
 
 		box-shadow: -3px 2px #010101;
 		-webkit-box-shadow: -3px 2px #010101;
@@ -151,27 +157,22 @@
 	div#midcross
 	{
 		width: 35px;
-		height: 35px;
+		height: 36px;
 		background-color: #222;
 
 		position: absolute;
-		top: 30px;
-		left: 30px;
-
-		box-shadow: -3px 2px #010101;
-		-webkit-box-shadow: -3px 2px #010101;
-		-moz-box-shadow: -3px 2px #010101;
-		-o-box-shadow: -3px 2px #010101;
+		top: 32px;
+		left: 31px;
 	}
 
-	div#rightcross
+	div.rightcross
 	{
 		width: 35px;
 		height: 35px;
 		background-color: #222;
 
 		position: absolute;
-		top: 30px;
+		top: 32px;
 		right: 0;
 
 		box-shadow: -3px 2px #010101;
@@ -190,7 +191,7 @@
 		-o-border-bottom-right-radius: 5px;
 	}
 
-	div#botcross
+	div.botcross
 	{
 		width: 35px;
 		height: 35px;
@@ -216,25 +217,25 @@
 		-o-border-bottom-right-radius: 5px;
 	}
 
-	div#upT
+	div.arrowUp
 	{
 		width: 0;
 		height: 0;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		border-bottom: 10px solid rgb(17, 17, 17);
+		border-bottom: 10px solid #111111;
 
 		position: absolute;
 		top: 10px;
 		left: 7px;
 	}
 
-	div#downT
+	div.arrowDown
 	{
 		width: 0;
 		height: 0;
-		border-left: 10px solid transparent;
-		border-right: 10px solid transparent;
+		border-left: 10px solid ;
+		border-right: 10px solid ;
 		border-top: 10px solid #111;
 
 		position: absolute;
@@ -242,12 +243,12 @@
 		left: 7px;
 	}
 
-	div#leftT
+	div.arrowLeft
 	{
 		width: 0;
 		height: 0;
 		border-top: 10px solid transparent;
-		border-right: 10px solid #111;
+		border-right: 10px solid rgb(68, 0, 255);
 		border-bottom: 10px solid transparent;
 
 		position: absolute;
@@ -255,7 +256,7 @@
 		left: 8px;
 	}
 
-	div#rightT
+	div.arrowRight
 	{
 		width: 0;
 		height: 0;

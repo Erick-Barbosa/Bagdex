@@ -240,7 +240,7 @@
 	{
 		width: 281px;
 		height: 99px;
-		background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/logo.png') no-repeat left top;
+		background: url('https://s3-us-west-2.amazonawhttps://bagdex.com.br/wp-content/uploads/2022/09/logo_bagdex_01-2048x1312.pngs.com/s.cdpn.io/200653/logo.png') no-repeat left top;
 		z-index: 1;
 
 		position: absolute;
@@ -251,7 +251,7 @@
 	div#left
 	{
 		width: 400px;
-		height: 500px;
+		height: 610px;
 		float: left;
 		position: relative;
 		z-index: 1;
@@ -260,7 +260,7 @@
 
 	div#curve1_left
 	{
-		width: 201px;
+		width: 212px;
 		height: 95px;
 		background-color: #cc6d00;
 		float: left;
@@ -270,10 +270,10 @@
 		top: 0;
 		left: 0;
 
-		box-shadow: 0 0 #5e0000;
-		-webkit-box-shadow: 0 0 #5e0000;
-		-moz-box-shadow: 0 0 #5e0000;
-		-o-box-shadow: 0 0 #5e0000;
+		box-shadow: 0 0 #8d5d14;
+		-webkit-box-shadow: 0 0 #8d5d14;
+		-moz-box-shadow: 0 0 #8d5d14;
+		-o-box-shadow: 0 0 #8d5d14;
 
 		border-bottom-right-radius: 85px 60px;
 		-webkit-border-bottom-right-radius: 85px 60px;
@@ -289,13 +289,13 @@
 	div#bg_curve1_left
 	{
 		width: 400px;
-		height: 80px;
-		background-color: #02008b;
+		height: 100px;
+		background-color: #cc6d00;
 
-		box-shadow: -10px 9px #5e0000;
-		-webkit-box-shadow: -10px 9px #5e0000;
-		-moz-box-shadow: -10px 9px #5e0000;
-		-o-box-shadow: -10px 9px #5e0000;
+		box-shadow: -10px 9px #8d5d14;
+		-webkit-box-shadow: -10px 9px #8d5d14;
+		-moz-box-shadow: -10px 9px #8d5d14;
+		-o-box-shadow: -10px 9px #8d5d14;
 
 		border-top-left-radius: 30px;
 		-webkit-border-top-left-radius: 30px;
@@ -303,7 +303,7 @@
 		-o-border-top-left-radius: 30px;
 	}
 
-	div#right, div#screen, div#bigbluebutton, div#barbutton1, div#barbutton2, div#cross
+	div#right, div#screen, div#bigbluebutton, div#barbutton1, div#barbutton2, div#cross, div.button_group
 	{
 		display: none;
 	}

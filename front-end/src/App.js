@@ -10,47 +10,80 @@ import InfoScreen from './Components/InfoScreen';
 import StatsNature from './Components/StatsNature';
 import BagmonList from './Components/BagmonList';
 
+import BagmonMock from './Mock/BagmonMock';
+
 import { Component } from 'react';
 
 let urlApiBagmon = 'http://localhost:5085/api/Bagdex'
 const initialState = {
   bagmonList: [],
   selectedBagmon: 0,
-  unknownBagmon: [
-    { 
-      id: '', name: 'Desconhecido', type1: '?', type2: '?', type3: '?', ability: '?',
-      weakness: '?', description: '', image: '', health_points: '', attack: '', defense: '',
-      special_defense: '', special_attack: '', speed: '', min_height: '?', max_height: '?',
-      min_weight: '?', max_weight: '?'
-    }
-  ]
+  listToDisplay: []
 }
-
-var actualBagmon = initialState.unknownBagmon
 
 export default class App extends Component {
 
   state = { ...initialState }
+  list = []
 
   componentDidMount() {
+    var data = []
+
     axios(urlApiBagmon).then(resp => {
-      this.setState({ bagmonList: resp.data})
-    }).catch(
-      this.setState({ bagmonList: this.state.unknownBagmon})
+      data = resp.data
+    }
+    ).catch(
+      data = BagmonMock()
     )
+    
+    this.setState({ bagmonList: data })
+    this.updateListToDisplay(0, data)
   }
 
-  setNextBagmon = () => {
-      this.setState({selectedBagmon: this.state.selectedBagmon+1})
+  setNextBagmon = () => {    
+    if(this.state.selectedBagmon < this.state.bagmonList.length - 1){
+      this.setState({ selectedBagmon: this.state.selectedBagmon + 1 })
+      this.updateListToDisplay(this.state.selectedBagmon + 1, this.state.bagmonList)
+    }
+    else {
+      this.setState({ selectedBagmon: 0 })
+      this.updateListToDisplay(0, this.state.bagmonList)
+    }
   }
 
   setPreviousBagmon = () => {
-    this.setState({selectedBagmon: this.state.selectedBagmon-1})
+    if(this.state.selectedBagmon > 0){
+      this.setState({ selectedBagmon: this.state.selectedBagmon - 1 })
+      this.updateListToDisplay(this.state.selectedBagmon - 1, this.state.bagmonList)
+    }
+    else {
+      this.setState({ selectedBagmon: this.state.bagmonList.length - 1 })
+      this.updateListToDisplay(this.state.bagmonList.length - 1, this.state.bagmonList)
+    }
+  }
+
+  updateListToDisplay = (index, list) => {
+    let actualIndex = index
+    if(index == -1)
+      actualIndex = list.length - 1
+    if(index > list.length)
+      actualIndex = 0
+    let lastIndex = actualIndex + 6
+    this.list = []
+
+    for( actualIndex; actualIndex < lastIndex; actualIndex++) {
+      if(list[actualIndex]){
+      this.list.push(
+        list[actualIndex].id +
+        " - " + 
+        list[actualIndex].name
+      )} else this.list.push(" - ")
+    }
+    
+    this.setState({ listToDisplay: this.list })
   }
 
   render() {
-      actualBagmon = this.state.un
-
       return (
       <div id="pokedex">
         <div id="left" >
@@ -77,7 +110,8 @@ export default class App extends Component {
             <div id="bg_curve2_right"></div>
             <div id="curve1_right">
             <BagmonList 
-              bagmonList={this.state.bagmonList}
+              startList={this.startList}
+              bagmonList={this.state.listToDisplay}
               bagmonIndex={this.state.selectedBagmon}
             />
             <StatsNature {...this.state.bagmonList[this.state.selectedBagmon]}/>

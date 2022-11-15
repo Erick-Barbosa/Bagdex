@@ -30,3 +30,11 @@
     {
         text-align: right;
     }
+
+    div.stats_up {
+        color: green;
+    }
+
+    div.stats_down {
+        color: red;
+    }

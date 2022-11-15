@@ -11,12 +11,12 @@ namespace Bagdex.Models
         public String? weakness { get; set; }
         public String? description { get; set; }
         public String? image { get; set; }
-        public short health_points { get; set; }
-        public short attack { get; set; }
-        public short defense { get; set; }
-        public short special_attack { get; set; }
-        public short special_defense { get; set; }
-        public short speed { get; set; }
+        public int health_points { get; set; }
+        public int attack { get; set; }
+        public int defense { get; set; }
+        public int special_attack { get; set; }
+        public int special_defense { get; set; }
+        public int speed { get; set; }
         public String? min_height { get; set; }
         public String? max_height { get; set; }
         public String? min_weight { get; set; }

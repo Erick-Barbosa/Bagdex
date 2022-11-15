@@ -3,14 +3,14 @@ export default function BagmonMock() {
         [
             { 
                 id: '1', name: 'Desconhecido1', type1: '?', type2: '?', type3: '?', ability: '?',
-                weakness: '?', description: '', image: '', health_points: '', attack: '', defense: '',
-                special_defense: '', special_attack: '', speed: '', min_height: '?', max_height: '?',
+                weakness: '?', description: '', image: '', health_points: '10', attack: '10', defense: '10',
+                special_defense: '10', special_attack: '10', speed: '10', min_height: '?', max_height: '?',
                 min_weight: '?', max_weight: '?'
             },
             { 
                 id: '2', name: 'Desconhecido2', type1: '?', type2: '?', type3: '?', ability: '?',
-                weakness: '?', description: '', image: '', health_points: '', attack: '', defense: '',
-                special_defense: '', special_attack: '', speed: '', min_height: '?', max_height: '?',
+                weakness: '?', description: '', image: '', health_points: '20', attack: '20', defense: '20',
+                special_defense: '20', special_attack: '20', speed: '20', min_height: '?', max_height: '?',
                 min_weight: '?', max_weight: '?'
             },
             { 

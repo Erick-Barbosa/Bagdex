@@ -16,7 +16,7 @@ namespace Bagdex.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Bagmon>>? GetAll() {
+        public ActionResult<List<Bagmon>>? getAll() {
             if (_context?.Bagmon != null)
                 return _context.Bagmon.ToList();
 

@@ -2,7 +2,7 @@ import './ButtonBoard.css'
 import { Component } from 'react';
 
 function animateClick(param) {
-    if(param.target.className == "")
+    if(param.target.className === "")
         return
 
     var delayInMilliseconds = 120;
@@ -23,6 +23,14 @@ class ButtonBoard extends Component {
         this.props.previousBagmon()
     }
 
+    handleNextNature() {
+        this.props.nextNature()
+    }
+
+    handlePreviousNature() {
+        this.props.previousNature()
+    }
+
     render(){
         return(
             <div className="board">
@@ -37,13 +45,13 @@ class ButtonBoard extends Component {
                 </div>
 
                 <div id="cross" onClick={e => animateClick(e)}>
-                    <div className="leftcross">
+                    <div className="leftcross" onClick={e => this.handlePreviousNature()}>
                     </div>
 
                     <div className="topcross" onClick={e => this.handlePreviousBagmon()}>
                     </div>
 
-                    <div className="rightcross">
+                    <div className="rightcross" onClick={e => this.handleNextNature()}>
                     </div>
 
                     <div className="botcross" onClick={e => this.handleNextBagmon()}>

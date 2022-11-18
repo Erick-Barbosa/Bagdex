@@ -1,0 +1,7 @@
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.csproj.AssemblyReference.cache
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.GeneratedMSBuildEditorConfig.editorconfig
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.AssemblyInfoInputs.cache
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.AssemblyInfo.cs
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.csproj.CoreCompileInputs.cache
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.MvcApplicationPartsAssemblyInfo.cs
+C:\Cotuca\Bagdex\back-end\obj\Debug\net7.0\back-end.MvcApplicationPartsAssemblyInfo.cache

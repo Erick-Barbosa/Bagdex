@@ -1,0 +1,91 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .auth{
+		margin: 50px auto 0 auto;
+        margin-top: 200px;
+
+        width: 450px;
+        height: 270px;
+
+        position:static;
+
+        background-color: #ff8800;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: -10px 9px #8d5d14;
+    }
+    
+    .formLogin {
+        margin: auto;
+        margin-top: 8px;
+        width: 270px;
+        height: 100px;
+        border-radius: 5px;
+        background-color: #ff8800;
+        padding: 25px;
+        display: block;
+    }
+
+    .tituloAuth {
+        text-align: center;
+        height: 12px;
+        padding-top: 16px;
+    }
+
+    .inputAuth {
+        height: 8px;
+        width: 250px;
+        padding: 8px;
+        margin: 5px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #4ba8ff inset;
+    }
+
+    button[type=submit] {
+        background-color: #8d5d14;
+        padding: 12px 20px;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+        width: 270px;
+        border-radius: 10px;
+        border-top: 10px;
+        font-size: 15px;
+    }
+
+    .cancel {
+        position: absolute;
+        top: 400px;
+        left: 360px;
+
+        color: #000000;
+        text-decoration: none;
+        background-color: #8d5d14;
+        padding-top: 10px;
+        margin-top: 20px;
+        margin-left: 10px;
+        border: none;
+        cursor: pointer;
+        width: 270px;
+        height: 30px;
+        border-radius: 10px;
+        border-top: 10px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .msgErro {
+        position: absolute;
+        top: 335px;
+        left: 367px;
+
+        width: 280px;
+        color: red;
+        text-align: center;
+        font-size: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    }

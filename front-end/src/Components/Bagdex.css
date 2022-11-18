@@ -5,6 +5,12 @@
 
 @media all {
 
+	body{
+		background-image: url("https://cdn.discordapp.com/attachments/714581550259372082/1042528058009210911/unknown.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
 	div#pokedex
 	{
 		width: 750px;
@@ -94,10 +100,10 @@
 		height: 520px;
 		background-color: #ff8800;
 
-		box-shadow: -10px 9px #5e4500;
+		box-shadow: -10px 9px #8d5d14;
 		-webkit-box-shadow: -10px 9px #8d5d14;
-		-moz-box-shadow: -10px 9px #5e0000;
-		-o-box-shadow: -10px 9px #5e0000;
+		-moz-box-shadow: -10px 9px #8d5d14;
+		-o-box-shadow: -10px 9px #8d5d14;
 
 		border-bottom-left-radius: 30px;
 		-webkit-border-bottom-left-radius: 30px;
@@ -156,6 +162,27 @@
 		background: radial-gradient(#b0fb7b, #50fb05);
 	}
 
+	.login_button 
+	{
+		color: #000000;
+		position: absolute;
+		left: 120px;
+		top: 20px;
+		text-decoration: none;
+
+		text-align: center;
+		background-color:#cc6d00;
+		width: 100px;
+		height: 25px;
+
+		border-radius: 20px;
+	}
+
+	.search_button 
+	{
+
+	}
+
 	div#picture img
 	{
 		display: block;
@@ -199,7 +226,7 @@
 	{
 		width: 300px;
 		height: 100px;
-		background-color: rgb(255, 255, 255);
+		background-color: transparent;
 		float: left;
 
 		position: absolute;

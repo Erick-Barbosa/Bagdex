@@ -16,5 +16,6 @@ namespace Bagdex.Data
         }
 
         public DbSet<Bagmon>? Bagmon { get; set; }
+        public DbSet<BagdexUser>? BagdexUser { get; set; }
     }
 }

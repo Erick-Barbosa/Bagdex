@@ -10,7 +10,7 @@ namespace Bagdex.Controllers
     {
         private readonly BagdexContext? _context;
 
-        public BagdexController(BagdexContext context)
+        public BagdexController(BagdexContext? context)
         {
             _context = context;
         }
@@ -21,20 +21,6 @@ namespace Bagdex.Controllers
                 return _context.Bagmon.ToList();
 
             else return null;
-        }
-
-        [HttpGet("{BagmonId}")]
-        public ActionResult<List<Bagmon>> get(int bagmonId) {
-            try {
-                var result = _context.Bagmon.Find(bagmonId);
-                if (result == null)
-                {
-                    return NotFound();
-                }
-                return Ok(result);
-            } catch (Exception e) {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados");
-            }
         }
 
         [HttpPost]
@@ -56,10 +42,6 @@ namespace Bagdex.Controllers
                 if (BagmonId != result.id) {
                     return BadRequest();
                 }
-                
-                //result.ra = dadosBagmonAlt.ra;
-                //result.nome = dadosBagmonAlt.nome;
-                //result.codCurso = dadosBagmonAlt.codCurso;
                 
                 await _context.SaveChangesAsync();
                 

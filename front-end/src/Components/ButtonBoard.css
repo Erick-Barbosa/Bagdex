@@ -55,7 +55,7 @@
 		box-shadow: -1px 2px #530000;
 	}
 
-  div#button_top
+  	div#button_top
 	{
 		position: absolute;
 		top: 0px;
@@ -73,7 +73,7 @@
     	box-shadow: -1px 2px #01004d;
 	}
 
-  div#button_bottom
+  	div#button_bottom
     {
         position: absolute;
         top: 68px;

@@ -31,10 +31,10 @@
         text-align: right;
     }
 
-    div.stats_up {
+    div.stats_down {
         color: green;
     }
 
-    div.stats_down {
+    div.stats_up {
         color: red;
     }

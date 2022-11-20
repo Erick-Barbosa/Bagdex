@@ -1,11 +1,8 @@
 import axios from "axios";
 const API_URL = "http://localhost:5085/api/BagdexUser/";
-const login = (username, senha) => {
+const login = (user) => {
     return axios
-        .post(API_URL + "auth", {
-            username,
-            senha,
-        })
+        .post(API_URL + "login", user)
         .then((response) => {
             console.log("response: " + JSON.stringify(response.data.token))
             if (response.data.token) {

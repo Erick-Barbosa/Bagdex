@@ -17,6 +17,7 @@ import NatureMock from '../Mock/NatureMock';
 
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import LoginLogoutButton from './LoginLogoutButton';
 
 let urlApiBagmon = 'http://localhost:5085/api/Bagdex'
 const initialState = {
@@ -87,6 +88,10 @@ export default class Bagdex extends Component {
     }
   }
   
+  async teste() {
+
+  }
+
   setNextNature = () => {
     var newPosition = 0 
     var currentNature = this.state.selectedNature
@@ -224,7 +229,7 @@ export default class Bagdex extends Component {
                 <div id="miniButtonGlass3"></div>
             </div>
             <div id="curve2_left">
-            <div ><Link to={"/login"} className='login_button'>{this.props.text}</Link></div>
+            <LoginLogoutButton text={this.props.text}/>
             </div>
             <ImageScreen {...this.state.bagmonList[this.state.selectedBagmon]} ></ImageScreen>
             <ButtonBoard 

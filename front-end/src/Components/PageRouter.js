@@ -4,6 +4,7 @@ import Bagdex from "./Bagdex";
 import Login from "./Login"
 
 import AuthService from "../Services/AuthService";
+import Logout from "./Logout";
 
 export default function PageRouter(props) {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -20,19 +21,23 @@ export default function PageRouter(props) {
     {currentUser ? (
       <Route path='/'
       element={
-          <Bagdex text={"Logout"} logged={true}/>
+          <Bagdex text={"Logout"}/>
       }/>
     ) : 
     (
       <Route path='/'
       element={
-        <Bagdex text={"Login"} logged={false}/>
+        <Bagdex text={"Login"}/>
     }/>
     )}
 
-    <Route path="/login"
-      element={<Login></Login>}
-    />
+      <Route path="/login"
+        element={<Login/>}
+      />
+
+      <Route path="/logout"
+        element={<Logout/>}
+      />
 
     </Routes>
   )

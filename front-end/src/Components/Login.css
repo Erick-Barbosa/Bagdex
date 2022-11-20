@@ -47,7 +47,7 @@
     button[type=submit] {
         background-color: #8d5d14;
         padding: 12px 20px;
-        margin-top: 30px;
+        margin-top: 20px;
         border: none;
         cursor: pointer;
         width: 270px;
@@ -57,16 +57,12 @@
     }
 
     .cancel {
-        position: absolute;
-        top: 400px;
-        left: 360px;
 
         color: #000000;
         text-decoration: none;
         background-color: #8d5d14;
+        margin-top: 10px;
         padding-top: 10px;
-        margin-top: 20px;
-        margin-left: 10px;
         border: none;
         cursor: pointer;
         width: 270px;
@@ -78,9 +74,6 @@
     }
 
     .msgErro {
-        position: absolute;
-        top: 335px;
-        left: 367px;
 
         width: 280px;
         color: red;

@@ -145,7 +145,7 @@
 		        
 	}
 
-	div#miniButtonGlass3
+	div#miniButtonGlassAuth
 	{
 		width: 20px;
 		height: 20px;
@@ -162,12 +162,27 @@
 		background: radial-gradient(#b0fb7b, #50fb05);
 	}
 
+	div#miniButtonGlassNoAuth
+	{
+		width: 20px;
+		height: 20px;
+		margin-right: 10px;
+		float: left;
+
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-o-border-radius: 20px;
+		
+		background: radial-gradient(#7e7e7e, #070707);
+	}
+
 	.login_button 
 	{
 		color: #000000;
 		position: absolute;
-		left: 120px;
-		top: 20px;
+		left: 30px;
+		top: 30px;
 		text-decoration: none;
 
 		text-align: center;
@@ -178,9 +193,8 @@
 		border-radius: 20px;
 	}
 
-	.search_button 
-	{
-
+	.login_button:hover {
+		background-color: #8d5d14;
 	}
 
 	div#picture img

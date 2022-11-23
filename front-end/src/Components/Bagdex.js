@@ -4,25 +4,24 @@ import axios from 'axios'
 //Left side
 import ButtonBoard from './ButtonBoard';
 import ImageScreen from './ImageScreen';
+import LoginLogoutButton from './LoginLogoutButton';
 
 //Right side
 import InfoScreen from './InfoScreen';
 import StatsNature from './StatsNature';
 import BagmonList from './BagmonList';
+import SearchBar from './SearchBar';
 
 import BagmonMock from '../Mock/BagmonMock';
 import NatureMock from '../Mock/NatureMock';
 
-
-
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
-import LoginLogoutButton from './LoginLogoutButton';
+import SessionButton from './SessionButton';
 
 let urlApiBagmon = 'http://localhost:5085/api/Bagdex'
 const initialState = {
   bagmonList: [],
-  selectedBagmon: 0,
+  currentBagmonIndex: 0,
   bagmonListToDisplay: [],
   natureList: NatureMock(),
   selectedNature: 0,
@@ -52,78 +51,58 @@ export default class Bagdex extends Component {
 
   setNextBagmon = () => {   
     var newPosition = 0 
-    var currentBagmon = this.state.selectedBagmon
+    var currentBagmon = this.state.currentBagmonIndex
 
-    if(currentBagmon < this.state.bagmonList.length - 1){
+    if(currentBagmon < this.state.bagmonList.length - 1)
       newPosition = currentBagmon + 1
-
-      this.setState({ selectedBagmon: newPosition })
-      this.updateListToDisplay(newPosition, this.state.bagmonList)
-      this.setStats(newPosition, this.state.bagmonList)
-    }
-    else {
-      this.setState({ selectedBagmon: newPosition })
-      this.updateListToDisplay(newPosition, this.state.bagmonList)
-      this.setStats(newPosition, this.state.bagmonList)
-    }
+    
+    this.setState({ currentBagmonIndex: newPosition })
+    this.updateListToDisplay(newPosition, this.state.bagmonList)
+    this.setStats(newPosition, this.state.bagmonList)
   }
 
   setPreviousBagmon = () => {
     var newPosition = 0
-    var currentBagmon = this.state.selectedBagmon
+    var currentBagmon = this.state.currentBagmonIndex
 
-    if(currentBagmon > 0){
+    if(currentBagmon > 0)
       newPosition = currentBagmon - 1
-
-      this.setState({ selectedBagmon: newPosition })
-      this.updateListToDisplay(newPosition, this.state.bagmonList)
-      this.setStats(newPosition, this.state.bagmonList)
-    }
-    else {
+    else 
       newPosition = this.state.bagmonList.length - 1
-
-      this.setState({ selectedBagmon: newPosition })
-      this.updateListToDisplay(newPosition, this.state.bagmonList)
-      this.setStats(newPosition, this.state.bagmonList)
-    }
+    
+    this.setState({ currentBagmonIndex: newPosition })
+    this.updateListToDisplay(newPosition, this.state.bagmonList)
+    this.setStats(newPosition, this.state.bagmonList)
   }
-  
-  async teste() {
 
+  setCurrentBagmonIndex = (newPosition) => {
+    this.setState({ currentBagmonIndex: newPosition })
+    this.updateListToDisplay(newPosition, this.state.bagmonList)
+    this.setStats(newPosition, this.state.bagmonList)
   }
 
   setNextNature = () => {
     var newPosition = 0 
     var currentNature = this.state.selectedNature
     
-    if(currentNature < this.state.natureList.length - 1){
+    if(currentNature < this.state.natureList.length - 1)
       newPosition = currentNature + 1
 
-      this.setState({ selectedNature: newPosition })
-      this.setStats(this.state.selectedBagmon, this.state.bagmonList, "+")
-    }
-    else {
-      this.setState({ selectedNature: newPosition })
-      this.setStats(this.state.selectedBagmon, this.state.bagmonList, "+")
-    }
+    this.setState({ selectedNature: newPosition })
+    this.setStats(this.state.currentBagmonIndex, this.state.bagmonList, "+")
   }
 
   setPreviousNature = () => {
     var newPosition = 0
     var currentNature = this.state.selectedNature
 
-    if(currentNature > 0){
+    if(currentNature > 0)
       newPosition = currentNature - 1
-
-      this.setState({ selectedNature: newPosition })
-      this.setStats(this.state.selectedBagmon, this.state.bagmonList, "-")
-    }
-    else {
+    else 
       newPosition = this.state.natureList.length - 1
 
-      this.setState({ selectedNature: newPosition })
-      this.setStats(this.state.selectedBagmon, this.state.bagmonList, "-")
-    }
+    this.setState({ selectedNature: newPosition })
+    this.setStats(this.state.currentBagmonIndex, this.state.bagmonList, "-")
   }
 
   setStats = (index, list, signal) => {
@@ -222,16 +201,14 @@ export default class Bagdex extends Component {
             <div id="bg_curve2_left"></div>
             <div id="curve1_left">
                 <div id="buttonGlass">
-                <div id="reflect"> </div>
-                
+                  <div id="reflect"> </div>
                 </div>
-                
-                <div id="miniButtonGlass3"></div>
+                <SessionButton isLoggedText={this.props.text}/>
             </div>
             <div id="curve2_left">
             <LoginLogoutButton text={this.props.text}/>
             </div>
-            <ImageScreen {...this.state.bagmonList[this.state.selectedBagmon]} ></ImageScreen>
+            <ImageScreen {...this.state.bagmonList[this.state.currentBagmonIndex]} ></ImageScreen>
             <ButtonBoard 
               nextBagmon={this.setNextBagmon}
               previousBagmon={this.setPreviousBagmon}
@@ -240,18 +217,22 @@ export default class Bagdex extends Component {
             />
         </div>
         <div id="right">
-            <InfoScreen {...this.state.bagmonList[this.state.selectedBagmon]}/>
+            <InfoScreen {...this.state.bagmonList[this.state.currentBagmonIndex]}/>
             <div id="bg_curve1_right"></div>
             <div id="bg_curve2_right"></div>
             <div id="curve1_right">
             <BagmonList 
-              {...this.state.bagmonListToDisplay}
+              list={this.state.bagmonListToDisplay}
             />
             <StatsNature 
               stats={this.state.statsList}
               nature={this.state.natureList[this.state.selectedNature]}
-              />
+            />
             </div>
+            <SearchBar 
+              list={this.state.bagmonList} 
+              set={this.setCurrentBagmonIndex}
+            />
             <div id="curve2_right"></div>
         </div>
       </div>

@@ -21,7 +21,6 @@ export default function Login() {
           window.location.reload(); // atualiza o localStorage
         },
         (error) => {
-          console.log(error)
           const resMessage =
             (error.response && 
                 error.response.data) ||

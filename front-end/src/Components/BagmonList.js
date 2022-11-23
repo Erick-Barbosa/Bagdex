@@ -3,17 +3,19 @@ import './BagmonList.css'
 
 export default class BagmonList extends Component {
 
-    listToDisplay = []
-
     render() {
+        if(this.props.list[0] != undefined){
         return (
             <div id="list">
-                <div className='firstElement'>{this.props[0]}</div>
-                <div className='element'>{this.props[1]}</div>
-                <div className='element'>{this.props[2]}</div>
-                <div className='element'>{this.props[3]}</div>
-                <div className='element'>{this.props[4]}</div>
-                <div className='element'>{this.props[5]}</div>
+                {this.props.list.map((value) => 
+                    <div className='element'>{value}</div>
+                )}
+            </div>
+        )}
+        else
+        return(
+            <div id='list'>
+                <div className='element'> Carregando Lista...</div>
             </div>
         )
     }

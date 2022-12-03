@@ -1,0 +1,25 @@
+.login_button 
+	{
+		color: #000000;
+		position: absolute;
+		left: 45px;
+		top: 40px;
+		text-decoration: none;
+
+		text-align: center;
+		background-color:#cc6d00;
+		width: 100px;
+		height: 25px;
+
+		box-shadow: #914d00;
+		box-shadow: -2px 1px #914d00;
+		-webkit-box-shadow: -2px 2px #914d00;
+		-moz-box-shadow: -2px 2px #914d00;
+		-o-box-shadow: -2px 2px #914d00;
+
+		border-radius: 10px;
+	}
+
+.login_button:hover {
+    background-color: #914d00;
+}

@@ -20,7 +20,21 @@ namespace Bagdex.Controllers
             if (_context?.Bagmon != null)
                 return _context.Bagmon.ToList();
 
-            else return null;
+            else return NoContent();
+        }
+
+        [HttpGet]
+        [Route("bagmon")]
+        public ActionResult<dynamic> login(int id)
+        {
+            //verifica se existe aluno a ser excluído
+            var bagmon = _context.Bagmon
+                .Where(b => b.id == id)
+                .FirstOrDefault();
+            if (bagmon == null)
+                return NotFound("Bagmon não encontrado");
+            
+            return bagmon;
         }
 
         [HttpPost]
@@ -46,7 +60,7 @@ namespace Bagdex.Controllers
                 await _context.SaveChangesAsync();
                 
                 return Created($"/api/Bagmon/{dadosBagmonAlt}", dadosBagmonAlt);
-            } catch (Exception e){
+            } catch {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados");
             }
         }
@@ -61,7 +75,7 @@ namespace Bagdex.Controllers
                 _context.Remove(Bagmon);
                 await _context.SaveChangesAsync();
                 return NoContent();
-            } catch (Exception e){
+            } catch {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados");
             }
         }

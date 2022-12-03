@@ -61,14 +61,13 @@
         text-decoration: none;
         background-color: #8d5d14;
         margin-top: 10px;
-        padding-top: 10px;
+        padding-top: 8px;
         border: none;
         cursor: pointer;
         width: 270px;
-        height: 30px;
+        height: 32px;
         border-radius: 10px;
-        border-top: 10px;
-        font-size: 15px;
+        font-size: 16px;
         text-align: center;
     }
 

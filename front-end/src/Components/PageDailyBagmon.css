@@ -1,0 +1,44 @@
+.timer {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    margin-top: 100px;
+    padding-left: 20px;
+
+    width: 402px;
+    background-color: #cc6d00;
+    border-top-left-radius: 20px;
+}
+
+.bagmonBox {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 402px;
+    height: 265px;
+    padding-left: 20px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+
+    box-shadow: 0 0 20px #4ba8ff inset;
+    -webkit-box-shadow: 0 0 20px #4ba8ff inset;
+    -moz-box-shadow: 0 0 20px #4ba8ff inset;
+    -o-box-shadow: 0 0 20px #4ba8ff inset;
+}
+
+.changeBagmon {
+    position: absolute;
+    width: 0px;
+    top: 80%;
+    left: 360px;
+    
+    background-color: transparent;
+    border: none;
+    font-size: 60px;
+    background-color: #cc6d00;
+}
+
+.changeBagmon:hover {
+    font-size: 65px;
+    cursor: pointer;
+}

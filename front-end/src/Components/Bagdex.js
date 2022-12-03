@@ -2,9 +2,10 @@ import './Bagdex.css';
 import axios from 'axios'
 
 //Left side
-import ButtonBoard from './ButtonBoard';
 import ImageScreen from './ImageScreen';
-import LoginLogoutButton from './LoginLogoutButton';
+import ButtonSession from './Buttons/ButtonSession';
+import SessionLight from './SessionLight';
+import ButtonBoard from './BagdexComponents/ButtonBoard';
 
 //Right side
 import InfoScreen from './InfoScreen';
@@ -16,7 +17,7 @@ import BagmonMock from '../Mock/BagmonMock';
 import NatureMock from '../Mock/NatureMock';
 
 import { Component } from 'react';
-import SessionButton from './SessionButton';
+
 
 let urlApiBagmon = 'http://localhost:5085/api/Bagdex'
 const initialState = {
@@ -43,6 +44,9 @@ export default class Bagdex extends Component {
     } catch {
       data = BagmonMock()
     }
+
+    if(Object.keys(data).length)
+      localStorage.setItem("bagmonListLength", Object.keys(data).length)
     
     this.setState({ bagmonList: data })
     this.updateListToDisplay(0, data)
@@ -195,21 +199,24 @@ export default class Bagdex extends Component {
   render() {
     return (
       <div id="pokedex">
+        <div>
+          {this.state.time}
+        </div>
         <div id="left" >
-            <div id="logo"></div>
             <div id="bg_curve1_left"></div>
             <div id="bg_curve2_left"></div>
             <div id="curve1_left">
                 <div id="buttonGlass">
                   <div id="reflect"> </div>
                 </div>
-                <SessionButton isLoggedText={this.props.text}/>
+                <SessionLight isLogged={this.props.isLogged}/>
             </div>
             <div id="curve2_left">
-            <LoginLogoutButton text={this.props.text}/>
+            <ButtonSession text={this.props.text}/>
             </div>
-            <ImageScreen {...this.state.bagmonList[this.state.currentBagmonIndex]} ></ImageScreen>
-            <ButtonBoard 
+            <ImageScreen {...this.state.bagmonList[this.state.currentBagmonIndex]}/>
+            <ButtonBoard
+              isLogged={this.props.isLogged}
               nextBagmon={this.setNextBagmon}
               previousBagmon={this.setPreviousBagmon}
               nextNature={this.setNextNature}

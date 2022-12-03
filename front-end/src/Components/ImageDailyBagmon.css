@@ -1,0 +1,25 @@
+div#screen_daily
+	{
+		height: 285px;
+		width: 220px;
+		background-color: #333333;
+
+		position: absolute;
+        top: 111px;
+        left: 55%;
+
+        padding-left: 30px;
+
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+	}
+
+div#picture
+	{
+		height: 305px;
+		width: 190px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		clear: both;
+	}

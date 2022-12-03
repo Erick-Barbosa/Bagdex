@@ -13,7 +13,7 @@ div#list
   }
 
   div.element:first-of-type {
-    background-color: rgb(70, 70, 70);
+    background-color: #333333;
     color: white;
 
     border: 3px solid;

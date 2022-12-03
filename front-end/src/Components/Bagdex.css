@@ -145,7 +145,7 @@
 		        
 	}
 
-	div#miniButtonGlassAuth
+	div#miniLightAuth
 	{
 		width: 20px;
 		height: 20px;
@@ -162,7 +162,7 @@
 		background: radial-gradient(#b0fb7b, #50fb05);
 	}
 
-	div#miniButtonGlassNoAuth
+	div#miniLightNoAuth
 	{
 		width: 20px;
 		height: 20px;
@@ -175,26 +175,6 @@
 		-o-border-radius: 20px;
 		
 		background: radial-gradient(#7e7e7e, #070707);
-	}
-
-	.login_button 
-	{
-		color: #000000;
-		position: absolute;
-		left: 30px;
-		top: 30px;
-		text-decoration: none;
-
-		text-align: center;
-		background-color:#cc6d00;
-		width: 100px;
-		height: 25px;
-
-		border-radius: 20px;
-	}
-
-	.login_button:hover {
-		background-color: #8d5d14;
 	}
 
 	div#picture img
@@ -344,7 +324,7 @@
 		-o-border-top-left-radius: 30px;
 	}
 
-	div#right, div#screen, div#bigbluebutton, div#barbutton1, div#barbutton2, div#cross, div.button_group
+	div#right, div#screen, div#cross, div.board
 	{
 		display: none;
 	}

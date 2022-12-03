@@ -23,25 +23,36 @@ namespace Bagdex.Controllers
             _context = context;
         }
 
-        [HttpPost("{auth}")]
-        public ActionResult<BagdexUser> get()
-        {
-            try
-            {
-                var result = _context.BagdexUser.Find();
-                if (result == null)
-                {
-                    return NotFound();
+        [HttpPut]
+        [Authorize(Roles = "Administrador")]
+        public async Task<ActionResult> put(BagdexUser dadosBagdexUserAlt) {
+            try {
+                var result = await _context.Bagmon.FindAsync(dadosBagdexUserAlt.id);
+                if (dadosBagdexUserAlt.id != result.id) {
+                    return BadRequest();
                 }
-                return Ok(result);
-            }
-            catch
-            {
+                
+                await _context.SaveChangesAsync();
+
+                dadosBagdexUserAlt.password = "";
+                
+                return Created($"/api/user/{dadosBagdexUserAlt}", dadosBagdexUserAlt);
+            } catch {
                 return this.StatusCode(
                     StatusCodes.Status500InternalServerError,
-                    "Falha no acesso ao banco de dados"
+                     "Falha no acesso ao banco de dados"
                 );
             }
+        }
+
+        [HttpGet]
+        [Route("userList")]
+        [Authorize(Roles = "Administrador")]
+        public ActionResult<List<BagdexUser>>? getAll() {
+            if (_context?.BagdexUser != null)
+                return _context.BagdexUser.ToList();
+
+            else return Unauthorized("Não autorizado");
         }
 
         [HttpPost]

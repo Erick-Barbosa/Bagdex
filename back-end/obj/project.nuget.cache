@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0XGXL+SJ+kvYmhZx/PQv7dIBydnIfwbDQYdxApZZyBV7Hj9ZKpqL5l23PFJyq0De4D+mhG/UK7QC1F4adg2D2w==",
+  "dgSpecHash": "DU49YMF+QvptokfaGQxrjw+xba+2vPm3zwz9zjUybzmFYscrcyaLJa/i5JWTbmuDPzAMciILP2B4nVm1OcgJDA==",
   "success": true,
   "projectFilePath": "C:\\Cotuca\\Bagdex\\back-end\\back-end.csproj",
   "expectedPackageFiles": [
@@ -51,10 +51,10 @@
     "C:\\Users\\T-GAMER\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.0\\swashbuckle.aspnetcore.6.1.0.nupkg.sha512",
-    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.0\\swashbuckle.aspnetcore.swagger.6.1.0.nupkg.sha512",
-    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.0\\swashbuckle.aspnetcore.swaggergen.6.1.0.nupkg.sha512",
-    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.1.0\\swashbuckle.aspnetcore.swaggerui.6.1.0.nupkg.sha512",
+    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\T-GAMER\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
@@ -74,16 +74,5 @@
     "C:\\Users\\T-GAMER\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\T-GAMER\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "back-end depende de Swashbuckle.AspNetCore (>= 6.0.8), mas Swashbuckle.AspNetCore 6.0.8 não foi encontrado. A melhor correspondência aproximada de Swashbuckle.AspNetCore 6.1.0 foi resolvida.",
-      "libraryId": "Swashbuckle.AspNetCore",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

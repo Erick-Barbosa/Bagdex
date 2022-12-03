@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./PageLogin.css";
 import AuthService from "../Services/AuthService";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function PageLogin(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -17,7 +17,7 @@ export default function Login() {
       await AuthService.login(userForm).then(
         () => {
           console.log("localStorage: " + localStorage.getItem("user"));
-          navigate("/")
+          navigate(props.backTo)
           window.location.reload(); // atualiza o localStorage
         },
         (error) => {
@@ -64,7 +64,7 @@ export default function Login() {
         </div>
         <div className="msgErro"><strong></strong>{message}</div>
         <button type="submit">Logar</button>
-        <div className="cancel" onClick={e => navigate("/")}>Cancelar</div>
+        <div className="cancel" onClick={e => navigate(props.backTo)}>Cancelar</div>
       </form>
     </div>
   );

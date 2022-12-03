@@ -3,12 +3,12 @@ div#screen
 		height: 285px;
 		width: 190px;
 		padding: 0 30px;
-		background-color: #222;
+		background-color: #333333;
 		float:left;
 
 		position: absolute;
 		top: 120px;
-		left: 70px;
+		left: 80px;
 
 		border-radius: 15px;
 		-webkit-border-radius: 15px;
@@ -16,7 +16,7 @@ div#screen
 		-o-border-radius: 15px;
 	}
 
-	div#picture
+div#picture
 	{
 		height: 305px;
 		width: 190px;
@@ -28,10 +28,4 @@ div#screen
 		-webkit-border-radius: 8px;
 		-moz-border-radius: 8px;
 		-o-border-radius: 8px;
-	}
-
-	.bottom-right {
-		position: absolute;
-		bottom: 10px;
-		right: 45px;
 	}

@@ -9,7 +9,7 @@ const SearchBar = (searchParams) => {
         <div onMouseLeave={e => setSearchValue("")}>
             <form onSubmit={e => e.preventDefault()}>
                 <input 
-                    id='search'
+                    id='search_bar'
                     className='search_bar'
                     type="text"
                     placeholder="🔍 Pesquisar..."
@@ -27,8 +27,7 @@ const SearchBar = (searchParams) => {
                 text={searchValue}
                 list={searchParams.list} 
                 setBagmon={searchParams.set}
-                resetSearch={setSearchValue}
-                className="search_bar_list"/>
+                resetSearch={setSearchValue}/>
         </div>
     )
 }

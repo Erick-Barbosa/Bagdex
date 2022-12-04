@@ -7,5 +7,9 @@ namespace Bagdex.Models
         public String? password { get; set;}
         public String? role { get; set;}
         public int permission_level { get;  set;}
+
+        public String toString() {
+            return "username: "+ username + " role: " + role;
+        }
     }
 }

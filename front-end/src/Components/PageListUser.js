@@ -1,50 +1,56 @@
-import axios from "axios";
 import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonBack from "./Buttons/ButtonBack";
 import ButtonSession from "./Buttons/ButtonSession";
 import SessionLight from "./SessionLight";
 import './PageListUser.css'
+import UserService from "../Services/UserService";
+import SearchUser from "./SearchUser";
 
-const urlApiBagmon = "http://localhost:5085/api/BagdexUser/userList"
-const user = JSON.parse(localStorage.getItem("user"));
 const initialState = {
     userList: [],
-    error: null
+    error: null,
+    buttonCounter: 0
 }
-
 
 class PageListUser extends Component {
     state = {...initialState}
 
-    async componentDidMount() {
-        await axios(urlApiBagmon, { headers: { Authorization: 'Bearer ' + user.token}})
-            .then(resp => {
-                this.setState({ userList: resp.data })
-            },
+    componentDidMount() {
+        UserService.getUserList()
+            .then(data => 
+                {this.setState({ userList: data })
+            }, 
             (error) => {
-                const _mens =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-                    this.setState({ error: _mens })
+                this.setState({ error: error })
             }
         )
     }
 
-    getOption(id) {
-        var value = document.getElementById("roles")
-        var text = value.options[0].text
-        var valueValue = value.options[1]
+    showButtons = (id) => {
         document.getElementById("s"+id).style.visibility = "visible"
         document.getElementById("c"+id).style.visibility = "visible"
+        this.setState({ buttonCounter: this.state.buttonCounter + 1})
+        console.log(this.state.buttonCounter + 1)
     }
 
-    hideButtons(id, shouldSave) {
-        document.getElementById("s"+id).style.visibility = "hidden"
-        document.getElementById("c"+id).style.visibility = "hidden"
+    hideButtons = (user, shouldSave) => {
+        var saveButton = document.getElementById("s"+user.id)
+        var cancelButton = document.getElementById("c"+user.id)
+        var dropdownRoles = document.getElementById("roles"+user.id)
+
+        if(shouldSave){
+            user.role = dropdownRoles.options[dropdownRoles.selectedIndex].text
+            UserService.changeUser(user)
+            if(this.state.buttonCounter - 1 == 0)
+                window.location.reload()
+        }
+        else
+            dropdownRoles.selectedIndex = 0 
+
+        this.setState({ buttonCounter: this.state.buttonCounter - 1 })
+        saveButton.style.visibility = "hidden"
+        cancelButton.style.visibility = "hidden"
     }
 
     goTo = (location) => {
@@ -82,19 +88,19 @@ class PageListUser extends Component {
                                     <select 
                                         name="roles" 
                                         className="roles" 
-                                        id="roles" 
-                                        onChange={e => this.getOption(user.id)}
+                                        id={"roles"+user.id} 
+                                        onChange={e => this.showButtons(user.id)}
                                         >
-                                            <option value="original" hidden selected>{user.role}</option>
+                                            <option id={user.id} hidden defaultValue={user.role}>{user.role}</option>
                                             <option value="usuario">Usuário</option>
                                             <option value="pesquisador">Pesquisador</option>
                                             <option value="administrador">Administrador</option>
                                     </select>
                                 </div>
-                                <div className="saveButton" id={"s"+user.id} onClick={e => this.hideButtons(user.id)}>
+                                <div className="cancelButton" id={"c"+user.id} onClick={e => this.hideButtons(user, false)}>
                                     ❌
                                 </div>
-                                <div className="cancelButton" id={"c"+user.id} onClick={e => this.hideButtons(user.id)}>
+                                <div className="saveButton" id={"s"+user.id} onClick={e => this.hideButtons(user, true)}>
                                     ✅
                                 </div>
                             </div>)
@@ -102,6 +108,7 @@ class PageListUser extends Component {
                     </div>
                     )
                     : <div className="list"><h2 className="title">{error}</h2></div>}
+                    <SearchUser list={this.state.userList} showButtons={this.showButtons} hideButtons={this.hideButtons}/>
                 </div>
             </div>
             <div id="right">

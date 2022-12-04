@@ -1,24 +1,35 @@
 import axios from "axios";
-const API_URL = "http://localhost:5085/api/BagdexUser/";
-const setUserList = () => {
-    return axios
-        .post(API_URL + "userList")
-        .then((response) => {
-            console.log("response: " + JSON.stringify(response.data.token))
-            if (response.data.token) {
-            localStorage.setItem("user", JSON.stringify(response.data));
-        }
-        return response.data;
-    });
+const loggedUser = JSON.parse(localStorage.getItem("user"));
+const urlApiUser = "http://localhost:5085/api/BagdexUser/";
+async function getUserList() {
+    return await
+        axios.get(urlApiUser + "userList", { headers: { Authorization: 'Bearer ' + loggedUser.token } })
+            .then(resp => {
+                return resp.data
+            },
+                (error) => {
+                    const _mens =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    return _mens
+                }
+            )
 };
 
-const getUserList = () => {
-    return JSON.parse(localStorage.getItem("user"));
-};
+const changeUser = (user) => {
+    return axios
+        .put(urlApiUser + "changeUserRole?userId=" + user.id,
+            user,
+            { headers: { Authorization: 'Bearer ' + loggedUser.token } })
+        .then(data => console.log(data))
+}
 
 const UserService = {
-    setUserList,
     getUserList,
+    changeUser,
 };
-    
+
 export default UserService;

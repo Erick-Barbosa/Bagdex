@@ -24,19 +24,21 @@ namespace Bagdex.Controllers
         }
 
         [HttpPut]
+        [Route("changeUserRole")]
         [Authorize(Roles = "Administrador")]
-        public async Task<ActionResult> put(BagdexUser dadosBagdexUserAlt) {
+        public async Task<ActionResult> put(int userId, BagdexUser changedUserData) {
             try {
-                var result = await _context.Bagmon.FindAsync(dadosBagdexUserAlt.id);
-                if (dadosBagdexUserAlt.id != result.id) {
+                var result = await _context.BagdexUser.FindAsync(userId);
+                if (userId != result.id) {
                     return BadRequest();
                 }
+                result.role = changedUserData.role;
                 
                 await _context.SaveChangesAsync();
 
-                dadosBagdexUserAlt.password = "";
+                changedUserData.password = "";
                 
-                return Created($"/api/user/{dadosBagdexUserAlt}", dadosBagdexUserAlt);
+                return Created($"/api/user/{changedUserData}", changedUserData);
             } catch {
                 return this.StatusCode(
                     StatusCodes.Status500InternalServerError,

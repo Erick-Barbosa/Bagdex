@@ -4,7 +4,7 @@ const SearchList = (searchParams) => {
     function setBagmon(number) {
         searchParams.setBagmon(number)
         searchParams.resetSearch("")
-        document.getElementById("search").value = ""
+        document.getElementById("search_bar").value = ""
     }
 
     var searchText = searchParams.text

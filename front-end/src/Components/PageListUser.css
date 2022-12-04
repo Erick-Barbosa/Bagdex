@@ -30,6 +30,7 @@
 .saveButton {
     cursor: pointer;
     float: right;
+    margin-right: 10px;
     font-size: 20px;
     visibility: hidden;
 }
@@ -37,7 +38,6 @@
 .cancelButton {
     cursor: pointer;
     float: right;
-    margin-right: 10px;
     font-size: 20px;
     visibility: hidden;
 }

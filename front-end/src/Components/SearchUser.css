@@ -1,0 +1,37 @@
+.search_user {
+	color: white;
+	position: absolute;
+	left: -120px;
+	top: 90px;
+	text-decoration: none;
+
+	padding-left: 10px;
+
+	text-align: left;
+	background-color:#333333;
+	width: 300px;
+	height: 60px;
+
+	font-size: 20px;
+	border: 1px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.search_user::placeholder {
+    color: white;
+}
+
+.search_user_list {
+	position: relative;
+	left: -145px;
+	top: 120px;
+	text-decoration: none;
+
+	padding-left: 10px;
+
+	text-align: left;
+	width: 340px;
+	height: 62px;
+	border-radius: 0px;
+}

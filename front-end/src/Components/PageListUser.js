@@ -60,7 +60,7 @@ class PageListUser extends Component {
     render() {
         var userList = this.state.userList
         var error = this.state.error
-
+        
         return (
           <div id="pokedex">
             <div id="left" >
@@ -107,7 +107,7 @@ class PageListUser extends Component {
                         })}
                     </div>
                     )
-                    : <div className="list"><h2 className="title">{error}</h2></div>}
+                    : <div className="list"><h2 className="title">Algo inesperado aconteceu. Verifique sua autorização</h2></div>}
                     <SearchUser list={this.state.userList} showButtons={this.showButtons} hideButtons={this.hideButtons}/>
                 </div>
             </div>

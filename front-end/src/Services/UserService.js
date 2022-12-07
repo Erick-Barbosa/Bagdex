@@ -6,16 +6,7 @@ async function getUserList() {
         axios.get(urlApiUser + "userList", { headers: { Authorization: 'Bearer ' + loggedUser.token } })
             .then(resp => {
                 return resp.data
-            },
-                (error) => {
-                    const _mens =
-                        (error.response &&
-                            error.response.data &&
-                            error.response.data.message) ||
-                        error.message ||
-                        error.toString();
-                    return _mens
-                }
+            }
             )
 };
 

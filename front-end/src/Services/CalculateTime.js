@@ -21,7 +21,7 @@ export default function calculateTime() {
     }
 
     function getTimeRemaining() {
-        
+        //localStorage.setItem("date", new Date())
         var storagedDate = localStorage.getItem("date")
         
         if(localStorage.getItem("date") == null){   
@@ -38,8 +38,7 @@ export default function calculateTime() {
         }
         else {
             DailyService.setDailyBagmon()
-            localStorage.setItem("date", unformatDate(actualDate))
-            secondsRemaining = -3
+            localStorage.setItem("date", new Date())
             window.location.reload(false)
         }
 
